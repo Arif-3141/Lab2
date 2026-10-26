@@ -1,12 +1,16 @@
+import statistics as stat
+
 def main():
     print("ET0735 (DevOps for AIoT) - Lab 2 - Introduction to Python")
     display_main_menu()
     num_lst = get_user_input()
     avg = calc_average_temperature(num_lst)
     min_max = find_min_max_temperature(num_lst)
-    print(num_lst)
-    print(avg)
-    print(min_max)
+    median = calc_median_temperature(num_lst)
+    print("\nNumber list: ", num_lst)
+    print("Average: ", avg)
+    print("Minimum and Maximum: ", min_max)
+    print("Median: ", median)
 
 
 
@@ -24,13 +28,12 @@ def calc_average_temperature(lst):
     sum = 0.0
     for i in lst:
         sum += i
-    avg = sum/len(lst)
+    avg = round(sum/len(lst),2)
     return avg
 
 def calc_median_temperature(lst):
-    median = int(len(lst)/2)
-    value = lst[median]
-    return value
+    sorted_lst = sort_temperature(lst)
+    return stat.median(sorted_lst)
 
 def find_min_max_temperature(lst):
     max, min = 0, 99999
@@ -43,8 +46,8 @@ def find_min_max_temperature(lst):
     return min_max
     
 
-def sort_temperature():
-    print("")
+def sort_temperature(lst):
+    return sorted(lst)
 
 
 if __name__ == "__main__":
