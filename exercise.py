@@ -10,7 +10,6 @@ def display_main_menu():
 
 def get_user_input():
     user_lst = input("User input: ").split(",")
-    print(user_lst)
     return user_lst
 
 def calc_average():
