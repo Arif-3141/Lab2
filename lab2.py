@@ -3,7 +3,7 @@ print("ET0735 (DevOps for AIoT) - Lab 2 - Introduction to Python")
 def calc_bmi(ht, wt):
     print("value of height is: ", ht)
     print("value of weight is: ", wt)
-    bmi = wt / (ht*ht)
+    bmi = round(wt / (ht*ht), 2)
     print("value of bmi is: ", bmi)
     if bmi < 18.5:
         value = -1
@@ -14,7 +14,7 @@ def calc_bmi(ht, wt):
     return bmi, value
 
 
-bmi, weightClass = calc_bmi(2.06, 113)
+bmi, weightClass = calc_bmi(2.06, 83)
 
 if weightClass == -1:
     print("BMI is underweight")
